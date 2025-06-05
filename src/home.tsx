@@ -1,6 +1,7 @@
 "use client"
 import Logo from "/logo.png"
 import Img1 from "/excited-well-dressed-young-woman-posing-light-wall-attractive-brunette-girl-pink-fur-coat-playing-with-her-hair-laughing 1.png"
+import group from "/Group.png"
 import Echo from "/echo.png"
 import shoes from "/shoes.png"
 import purse from "/purse.png"
@@ -24,6 +25,7 @@ import four from "/fashion-portrait-young-elegant-woman 1.png"
 import ps from "/ps5-slim-goedkope-playstation_large 1.png"
 import perfume from "/perfume.png"
 import women from "/attractive-woman-wearing-hat-posing-black-background 1.png"
+import time from "/image.png"
 import {
   Search,
   ShoppingCart,
@@ -118,7 +120,7 @@ export default function Home() {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         {/* Top Banner */}
-        <div className="bg-red-600 text-white py-2 px-4">
+        <div className="bg-red-700 text-white py-2 px-4">
           <div className="max-w-7xl mx-auto flex justify-end items-center gap-2 sm:gap-6 text-xs sm:text-sm">
             <a href="/seller-registration" className="hover:underline flex items-center gap-1">
               <span className="hidden sm:inline">Seller Registration</span>
@@ -130,7 +132,7 @@ export default function Home() {
               <span className="sm:hidden">Support</span>
             </a>
           </div>
-          </div>
+        </div>
 
 
         {/* Main Navigation */}
@@ -245,7 +247,7 @@ export default function Home() {
               {/* Language Selector - Hidden on mobile */}
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="hidden sm:flex items-center gap-2 text-sm">
+                  <Button variant="ghost" className="hidden sm:flex items-center gap-2 text-sm border lg:p-6">
                     <div className="w-5 h-4 bg-gradient-to-b from-orange-500 via-white to-green-500 rounded-sm"></div>
                     EN
                     <ChevronDown className="h-4 w-4" />
@@ -272,7 +274,7 @@ export default function Home() {
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <RotateCcw className="h-5 w-5 sm:h-6 sm:w-6" />
+                  <img src={group} className="size-6 w-8" />
                   <span className="text-xs mt-1">Return</span>
                 </motion.a>
                 <motion.a
@@ -351,7 +353,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-6 lg:gap-8 items-center">
             <motion.div className="text-center md:text-left" variants={fadeInLeft} initial="hidden" animate="visible">
               <motion.p
-                className="text-sm text-gray-600 mb-4"
+                className=" text-gray-600 mb-[35px] sm:text-xl"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
@@ -359,7 +361,7 @@ export default function Home() {
                 SUMMER 2024
               </motion.p>
               <motion.h1
-                className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8"
+                className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-[35px]"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
@@ -367,7 +369,7 @@ export default function Home() {
                 NEW COLLECTION
               </motion.h1>
               <motion.p
-                className="text-gray-600 mb-6 text-sm sm:text-base"
+                className="text-gray-600 mb-6 sm:text-xl"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.5 }}
@@ -395,7 +397,7 @@ export default function Home() {
               <motion.img
                 src={Img1}
                 alt="Model in pink jacket"
-                className="rounded-lg h-64 sm:h-80 lg:h-96 w-auto object-cover"
+                className="rounded-lg h-64 sm:h-80 lg:h-full w-auto object-cover"
                 whileHover={{ scale: 1.05, rotate: 2 }}
                 transition={{ duration: 0.3 }}
               />
@@ -468,7 +470,7 @@ export default function Home() {
               <motion.div key={index} variants={staggerItem}>
                 <motion.div whileHover={scaleOnHover}>
                   <Card className="group hover:shadow-lg transition-shadow">
-                    <CardContent className="p-2 sm:p-4">
+                    <CardContent className="">
                       <motion.span
                         className="mb-2 sm:mb-3 px-2 py-1 text-xs font-semibold text-white bg-red-500 rounded-full uppercase"
                         initial={{ scale: 0 }}
@@ -478,16 +480,17 @@ export default function Home() {
                         Deal
                       </motion.span>
                       <div className="relative flex justify-center w-full mb-2 sm:mb-4">
-                        <motion.img
-                          src={product.img || "/placeholder.svg"}
-                          alt={product.name}
-                          className="h-32 sm:h-40 lg:h-48 w-auto object-fit rounded-lg"
-                          whileHover={{ scale: 1.1 }}
-                          transition={{ duration: 0.3 }}
-                        />
-                        <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
-                          <Heart className="absolute top-2 right-2 h-4 w-4 sm:h-5 sm:w-5 text-gray-400 hover:text-red-600 cursor-pointer" />
-                        </motion.div>
+                        <div className="flex flex-col justify-center items-center">
+                          <img src={time} className=" w-20 sm:w-32 mb-4" />
+                          <motion.img
+                            src={product.img || "/placeholder.svg"}
+                            alt={product.name}
+                            className="h-24 sm:h-40 lg:h-48 w-auto object-fit rounded-lg"
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ duration: 0.3 }}
+                          />
+                        </div>
+                        <Heart className="absolute top-[-20px] right-2 h-4 w-4 sm:h-5 sm:w-5 text-gray-400 hover:text-red-600 cursor-pointer" />
                       </div>
                       <h3 className="font-semibold text-sm sm:text-base truncate">{product.name}</h3>
                       <p className="text-xs sm:text-sm text-gray-500 mb-2 sm:mb-3">Lorem abc</p>
@@ -519,102 +522,64 @@ export default function Home() {
       </AnimatedSection>
 
       {/* Trending Must-haves */}
-      <AnimatedSection className="bg-gray-50">
-        <div className="container mx-auto">
-          <motion.div
-            className="flex justify-between items-center mb-6 sm:mb-8"
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <h2 className="text-xl sm:text-2xl font-bold">Trending must-haves</h2>
-            <motion.a
-              href="#"
-              className="text-red-600 hover:underline text-sm sm:text-base"
-              whileHover={{ scale: 1.05 }}
-            >
-              View All
-            </motion.a>
-          </motion.div>
-
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {[
-              {
-                title: "Coat & Suit Outfit Men",
-                subtitle: "Explore new arrivals",
-                img: top,
-              },
-              {
-                title: "Coat & Suit Outfit Men",
-                subtitle: "Explore new arrivals",
-                img: top1,
-              },
-              {
-                title: "Coat & Suit Outfit Men",
-                subtitle: "Explore new arrivals",
-                img: top2,
-              },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                className="group cursor-pointer"
-                variants={staggerItem}
-                whileHover={{ y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="relative overflow-hidden rounded-lg">
-                  <motion.img
-                    src={item.img}
-                    alt={item.title}
-                    className="w-full h-64 sm:h-80 lg:h-96 object-cover"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.5 }}
-                  />
-                  <motion.div
-                    className="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4 sm:p-6"
-                    initial={{ opacity: 0 }}
-                    whileHover={{ opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="text-white w-full">
-                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-4">
-                        <motion.div
-                          initial={{ x: -20, opacity: 0 }}
-                          whileHover={{ x: 0, opacity: 1 }}
-                          transition={{ delay: 0.1 }}
-                        >
-                          <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">{item.title}</h3>
-                          <p className="text-sm opacity-90">{item.subtitle}</p>
-                        </motion.div>
-                        <motion.div
-                          initial={{ x: 20, opacity: 0 }}
-                          whileHover={{ x: 0, opacity: 1 }}
-                          transition={{ delay: 0.2 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
+      <div>
+        <section className="py-8 sm:py-12 lg:py-16 bg-gray-50 px-4 sm:px-6 lg:px-24">
+          <div className="container mx-auto">
+            <div className="flex justify-between items-center mb-6 sm:mb-8">
+              <h2 className="text-xl sm:text-2xl font-bold">Trending must-haves</h2>
+              <a href="#" className="text-red-600 hover:underline text-sm sm:text-base">
+                View All
+              </a>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+              {[
+                {
+                  title: "Coat & Suit Outfit Men",
+                  subtitle: "Explore new arrivals",
+                  img: top,
+                },
+                {
+                  title: "Coat & Suit Outfit Men",
+                  subtitle: "Explore new arrivals",
+                  img: top1,
+                },
+                {
+                  title: "Coat & Suit Outfit Men",
+                  subtitle: "Explore new arrivals",
+                  img: top2,
+                },
+              ].map((item, index) => (
+                <div key={index} className="group cursor-pointer">
+                  <div className="relaive">
+                    <img
+                      src={item.img}
+                      alt={item.title}
+                      className="w-full h-64 sm:h-80 lg:h-96 object-cover rounded-t-lg"
+                    />
+                    <div className="relative inset-0 bg-black bg-opacity-40 rounded-b-lg flex items-end p-4 sm:p-6">
+                      <div className="text-white w-full">
+                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-4">
+                          <div>
+                            <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">{item.title}</h3>
+                            <p className="text-sm opacity-90">{item.subtitle}</p>
+                          </div>
                           <Button
                             variant="outline"
                             className="bg-white text-black border-white hover:bg-gray-100 text-sm sm:text-base"
                           >
                             ₹4999 Shop Now
                           </Button>
-                        </motion.div>
+                        </div>
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
                 </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </AnimatedSection>
+              ))}
+            </div>
+          </div>
+        </section>
+
+      </div>
 
       {/* Music Experience Section */}
       <AnimatedSection className="bg-black text-white">
@@ -727,12 +692,13 @@ export default function Home() {
                 <motion.div key={index} variants={staggerItem}>
                   <motion.div whileHover={scaleOnHover}>
                     <Card className="group hover:shadow-lg transition-shadow">
-                      <CardContent className="p-2 sm:p-4">
-                        <div className="flex justify-center w-full mb-2 sm:mb-4">
+                      <CardContent className="">
+                        <div className="flex flex-col justify-center items-center">
+                          <img src={time} className=" w-20 sm:w-32 mb-4" />
                           <motion.img
                             src={product.img || "/placeholder.svg"}
                             alt={product.name}
-                            className="h-32 sm:h-40 lg:h-48 w-auto object-cover rounded-lg"
+                            className="h-24 sm:h-40 lg:h-48 w-auto object-fit rounded-lg"
                             whileHover={{ scale: 1.1 }}
                             transition={{ duration: 0.3 }}
                           />
