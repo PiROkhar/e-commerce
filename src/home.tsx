@@ -46,7 +46,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { useState } from "react"
-import { motion, useScroll, useTransform, useInView } from "framer-motion"
+import { motion, useInView } from "framer-motion"
 import { useMotionValue } from "framer-motion";
 import { useRef } from "react"
 
@@ -155,7 +155,7 @@ export default function Home() {
                   initial="hidden"
                   animate="visible"
                 >
-                  {categories.map((category, index) => (
+                  {categories.map((category) => (
                     <motion.a
                       key={category.name}
                       href={category.href}
