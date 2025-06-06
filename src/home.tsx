@@ -1,6 +1,7 @@
 "use client"
 import Logo from "/logo.png"
 import Img1 from "/excited-well-dressed-young-woman-posing-light-wall-attractive-brunette-girl-pink-fur-coat-playing-with-her-hair-laughing 1.png"
+import india from "/india.png"
 import loc from "/vector-2.png"
 import group from "/Group.png"
 import Echo from "/echo.png"
@@ -27,6 +28,10 @@ import ps from "/ps5-slim-goedkope-playstation_large 1.png"
 import perfume from "/perfume.png"
 import women from "/attractive-woman-wearing-hat-posing-black-background 1.png"
 import time from "/image.png"
+import google from "/google.png"
+import visa from "/visa.png"
+import apple from "/apple.png"
+import qr from "/qr.png"
 import {
   Search,
   ShoppingCart,
@@ -39,8 +44,8 @@ import {
   Facebook,
   Instagram,
   Youtube,
-  QrCode,
   Menu,
+  Linkedin,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -137,7 +142,7 @@ export default function Home() {
 
         {/* Main Navigation */}
         <motion.div
-          className="bg-white border-b border-gray-200 sm:py-4 px-4 sm:px-6 lg:px-24"
+          className="bg-white sm:py-4 px-4 sm:px-6 lg:px-24"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
@@ -208,7 +213,7 @@ export default function Home() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4, duration: 0.5 }}
               >
-               <img src={loc} className="h-8"/>
+                <img src={loc} className="h-8" />
                 <div className="flex flex-col">
                   <span className="text-xs">Delivered To</span>
                   <span className="font-medium text-black">Pune 412206</span>
@@ -224,16 +229,17 @@ export default function Home() {
               transition={{ delay: 0.5, duration: 0.5 }}
             >
               <div className="relative flex">
-                <Input
-                  type="text"
-                  placeholder="Search products..."
-                  className="flex-1 h-10 sm:h-12 pr-4 border-gray-300 rounded-l-md rounded-r-none focus:ring-red-500 focus:border-red-500 text-sm"
-                />
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button className="h-10 sm:h-12 px-3 sm:px-6 bg-red-600 hover:bg-red-700 rounded-l-none rounded-r-md">
+                  <Button className="h-10 sm:h-12 px-3 sm:px-6 bg-red-600 hover:bg-red-700 rounded-r-none rounded-l-md">
                     <Search className="h-4 w-4 sm:h-5 sm:w-5" />
                   </Button>
                 </motion.div>
+                <Input
+                  type="text"
+                  placeholder="Search products..."
+                  className="flex-1 h-10 sm:h-12 pr-4 border-gray-300 rounded-r-md rounded-l-none focus:ring-red-500 focus:border-red-500 text-sm"
+                />
+
               </div>
             </motion.div>
 
@@ -247,8 +253,8 @@ export default function Home() {
               {/* Language Selector - Hidden on mobile */}
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="hidden sm:flex items-center gap-2 text-sm border lg:p-6">
-                    <div className="w-5 h-4 bg-gradient-to-b from-orange-500 via-white to-green-500 rounded-sm"></div>
+                  <Button variant="ghost" className="hidden bg-[#F5F5F5] sm:flex items-center gap-2 text-sm border lg:p-6">
+                    <img src={india} className="w-7" />
                     EN
                     <ChevronDown className="h-4 w-4" />
                   </Button>
@@ -274,7 +280,7 @@ export default function Home() {
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <img src={group} className="size-6 w-8" />
+                  <img src={group} className=" w-6" />
                   <span className="text-xs mt-1">Return</span>
                 </motion.a>
                 <motion.a
@@ -303,7 +309,7 @@ export default function Home() {
 
         {/* Category Navigation - Desktop Only */}
         <motion.div
-          className="bg-white border-b border-gray-200 py-3 px-4 hidden lg:block"
+          className="bg-[white] border-b border-gray-200 py-3 px-4 hidden lg:block"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.5 }}
@@ -344,7 +350,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <motion.section
-        className="bg-gray-50 px-4 sm:px-6 lg:px-24"
+        className="bg-gray-50 mt-[-100px] px-4 sm:px-6 lg:px-24 pt-20"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -385,23 +391,14 @@ export default function Home() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button className="bg-red-600 hover:bg-red-700 px-6 sm:px-8 py-2 sm:py-3">SHOP NOW</Button>
+                <Button className="bg-red-600 hover:bg-red-700 px-6 sm:px-8 py-2 sm:py-6">SHOP NOW</Button>
               </motion.div>
             </motion.div>
-            <motion.div
-              className="relative flex justify-center"
-              variants={fadeInRight}
-              initial="hidden"
-              animate="visible"
-            >
-              <motion.img
-                src={Img1}
-                alt="Model in pink jacket"
-                className="rounded-lg h-64 sm:h-80 lg:h-full w-auto object-cover"
-                whileHover={{ scale: 1.05, rotate: 2 }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.div>
+            <img
+              src={Img1}
+              alt="Model in pink jacket"
+              className="rounded-lg h-64 sm:h-80 lg:h-full w-auto object-cover"
+            />
           </div>
         </div>
       </motion.section>
@@ -616,7 +613,7 @@ export default function Home() {
               </motion.div>
             </motion.div>
             <motion.div
-              className="relative flex justify-center"
+              className="relative flex justify-end pr-20"
               variants={fadeInRight}
               initial="hidden"
               whileInView="visible"
@@ -990,135 +987,217 @@ export default function Home() {
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <div className="container mx-auto">
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-8 gap-6 sm:gap-8"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {/* Company Info */}
-            <motion.div className="lg:col-span-2 space-y-4 sm:space-y-6" variants={staggerItem}>
-              <motion.div className="flex items-center" whileHover={{ scale: 1.05 }}>
-                <img src={Logo || "/placeholder.svg"} alt="StarMart Logo" className="mr-2 h-8 sm:h-10" />
-                <span className="text-lg sm:text-xl font-bold">StarMart</span>
-              </motion.div>
-              <p className="text-sm text-gray-300">
-                Lorem Ipsum is simply dummy text the printing and typesetting industry and Lorem
+        <div className="container mx-auto px-6 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-8">
+            {/* Logo and Description */}
+            <div className="lg:col-span-2">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="bg-white p-1 rounded">
+                  <img src={Logo} className="h-8"/>
+                </div>
+                <span className="text-xl">StarMart</span>
+              </div>
+              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                Lorem Ipsum is simply dummy<br/>   text the printing and typesetting industry<br/>and Lorem
               </p>
-              <motion.div
-                className="flex space-x-4"
-                variants={staggerContainer}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-              >
-                {[
-                  { icon: Twitter, href: "#" },
-                  { icon: Facebook, href: "#" },
-                  { icon: Instagram, href: "#" },
-                  { icon: Youtube, href: "#" },
-                ].map((social, index) => (
-                  <motion.a
-                    key={index}
-                    href={social.href}
-                    className="hover:text-gray-400"
-                    variants={staggerItem}
-                    whileHover={{ scale: 1.2, y: -2 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <social.icon className="w-5 h-5" />
-                    <span className="sr-only">Social Media</span>
-                  </motion.a>
-                ))}
-              </motion.div>
-            </motion.div>
+              <div className="flex gap-4">
+                <a href="#" className="text-gray-400 hover:text-white">
+                  <Twitter className="w-5 h-5" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white">
+                  <Facebook className="w-5 h-5" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white">
+                  <Instagram className="w-5 h-5" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white">
+                  <Youtube className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
 
-            {/* Footer Links */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6"></div>
-            {[
-              {
-                title: "About",
-                links: ["Contact Us", "About Us", "Careers"],
-              },
-              {
-                title: "Help",
-                links: ["Payment", "Shipping", "Return & Order Cancellations", "FAQ"],
-              },
-              {
-                title: "Policies",
-                links: ["Privacy", "Security", "Terms & Conditions", "Seller", "Return & Refund", "Shipping"],
-              },
-              {
-                title: "Quick Links",
-                links: ["Privacy Policy", "Terms of use", "FAQ", "Seller", "Contact"],
-              },
-            ].map((section, index) => (
-              <motion.div key={index} className="space-y-4" variants={staggerItem}>
-                <h3 className="text-lg font-medium">{section.title}</h3>
-                <ul className="space-y-2 text-sm text-gray-300">
-                  {section.links.map((link, linkIndex) => (
-                    <motion.li key={linkIndex}>
-                      <motion.a
-                        href="#"
-                        className="hover:underline"
-                        whileHover={{ x: 5 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        {link}
-                      </motion.a>
-                    </motion.li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
+            {/* About */}
+            <div>
+              <h3 className="text-white font-medium mb-4">About</h3>
+              <ul className="space-y-3">
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-white text-sm">
+                    Contact Us
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-white text-sm">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-white text-sm">
+                    Careers
+                  </a>
+                </li>
+              </ul>
+            </div>
 
-            {/* Download App Section */}
-            <motion.div className="space-y-4" variants={staggerItem}>
-              <h3 className="text-lg font-medium">Download App</h3>
-              <p className="text-sm text-gray-300">Save ₹3 with App New User Only</p>
-              <motion.div whileHover={{ scale: 1.1, rotate: 5 }} transition={{ duration: 0.3 }}>
-                <QrCode className="w-20 h-20 sm:w-24 sm:h-24" />
-              </motion.div>
-            </motion.div>
-          </motion.div>
+            {/* Help */}
+            <div>
+              <h3 className="text-white font-medium mb-4">Help</h3>
+              <ul className="space-y-3">
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-white text-sm">
+                    Payment
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-white text-sm">
+                    Shipping
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-white text-sm">
+                    Return & Order Cancellations
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-white text-sm">
+                    FAQ
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Policies */}
+            <div>
+              <h3 className="text-white font-medium mb-4">Policies</h3>
+              <ul className="space-y-3">
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-white text-sm">
+                    Privacy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-white text-sm">
+                    Security
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-white text-sm">
+                    Terms & Conditions
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-white text-sm">
+                    Seller
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-white text-sm">
+                    Return & Refund
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-white text-sm">
+                    Shipping
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="">
+              <div className="">
+                <div>
+                  <h4 className="text-white font-medium mb-2">Quick Links</h4>
+                  <ul className="space-y-2">
+                    <li>
+                      <a href="#" className="text-gray-400 hover:text-white text-sm">
+                        Privacy Policy
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="text-gray-400 hover:text-white text-sm">
+                        Terms Of Use
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="text-gray-400 hover:text-white text-sm">
+                        FAQ
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="text-gray-400 hover:text-white text-sm">
+                        Contact
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Download App */}
+            <div>
+              <h3 className="text-white font-medium mb-4">Download App</h3>
+              <p className="text-gray-400 text-sm mb-4">Save $3 with App New User Only</p>
+
+              <div className="flex gap-3 mb-4">
+                <div className="bg-white p-2 rounded">
+                  <img src={qr} alt="QR Code" className="w-30 h-20" />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <a href="#" className="block">
+                    <img src={google} alt="Get it on Google Play"className="h-8 w-auto" />
+                  </a>
+                  <a href="#" className="block">
+                    <img src={apple} alt="Download on the App Store"  className="h-8 w-auto" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <a href="#" className="text-gray-400 hover:text-white">
+                  <Facebook className="w-5 h-5" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white">
+                  <Twitter className="w-5 h-5" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white">
+                  <Instagram className="w-5 h-5" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick as Section */}
+
 
           {/* Bottom Section */}
-          <motion.div
-            className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-800"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5, duration: 0.5 }}
-          >
+          <div className="mt-8 pt-8 border-t border-gray-800">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-sm text-gray-400 text-center md:text-left">
-                ©2024 ECOMPLUSSELLER.COM. All right reserved.
-              </p>
-              <motion.div
-                className="flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-8 text-sm"
-                variants={staggerContainer}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-              >
-                {["Seller Registration", "Advertise with us", "Become an Affiliate", "Support Center"].map(
-                  (link, index) => (
-                    <motion.a
-                      key={index}
-                      href="#"
-                      className="hover:underline"
-                      variants={staggerItem}
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      {link}
-                    </motion.a>
-                  ),
-                )}
-              </motion.div>
+              <div className="text-gray-400 text-sm">©2024 ECOMPLUSSELLER.COM. All right reserved.</div>
+
+              <div className="flex flex-wrap gap-6 sm:gap-12 text-sm">
+                <a href="#" className="text-gray-400 hover:text-white">
+                  Seller Registration
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white">
+                  Advertise with us
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white">
+                  Become an Affiliate
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white">
+                  Support Center
+                </a>
+              </div>
+
+              <div>
+                <img src={visa} alt="Visa" className="h-12 w-auto" />
+              </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </motion.footer>
     </div>
