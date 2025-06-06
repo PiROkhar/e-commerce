@@ -32,7 +32,6 @@ import {
   ShoppingCart,
   Heart,
   Star,
-  MapPin,
   Headphones,
   ChevronDown,
   RotateCcw,
