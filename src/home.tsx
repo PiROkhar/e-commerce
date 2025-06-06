@@ -988,9 +988,9 @@ export default function Home() {
         transition={{ duration: 0.8 }}
       >
         <div className="container mx-auto px-6 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
             {/* Logo and Description */}
-            <div className="lg:col-span-2">
+            <div className="">
               <div className="flex items-center gap-2 mb-4">
                 <div className="bg-white p-1 rounded">
                   <img src={Logo} className="h-8"/>
@@ -998,7 +998,7 @@ export default function Home() {
                 <span className="text-xl">StarMart</span>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                Lorem Ipsum is simply dummy<br/>   text the printing and typesetting industry<br/>and Lorem
+                Lorem Ipsum is simply dummy text the printing and typesetting industry and Lorem
               </p>
               <div className="flex gap-4">
                 <a href="#" className="text-gray-400 hover:text-white">
@@ -1057,7 +1057,7 @@ export default function Home() {
                 </li>
                 <li>
                   <a href="#" className="text-gray-400 hover:text-white text-sm">
-                    Return & Order Cancellations
+                    Return & Order<br/> Cancellations
                   </a>
                 </li>
                 <li>
@@ -1104,6 +1104,7 @@ export default function Home() {
                 </li>
               </ul>
             </div>
+          {/* Quick as Section */}
             <div className="">
               <div className="">
                 <div>
@@ -1141,7 +1142,7 @@ export default function Home() {
 
               <div className="flex gap-3 mb-4">
                 <div className="bg-white p-2 rounded">
-                  <img src={qr} alt="QR Code" className="w-30 h-20" />
+                  <img src={qr} alt="QR Code" className="w-20" />
                 </div>
                 <div className="flex flex-col gap-2">
                   <a href="#" className="block">
@@ -1170,11 +1171,10 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Quick as Section */}
 
 
           {/* Bottom Section */}
-          <div className="mt-8 pt-8 border-t border-gray-800">
+          <div className="mt-8 pt-8 border-t border-gray-800 sm:mb-[-70px]">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <div className="text-gray-400 text-sm">©2024 ECOMPLUSSELLER.COM. All right reserved.</div>
 
