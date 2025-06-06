@@ -110,7 +110,7 @@ export default function Home() {
   const headerY = useMotionValue(-100);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white flex flex-col space-y-[100px]">
       {/* Header */}
       <motion.div
         className="w-full sticky top-0 z-50"
@@ -120,7 +120,7 @@ export default function Home() {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         {/* Top Banner */}
-        <div className="bg-red-700 text-white py-2 px-4">
+        <div className="bg-red-700 text-white  px-4">
           <div className="max-w-7xl mx-auto flex justify-end items-center gap-2 sm:gap-6 text-xs sm:text-sm">
             <a href="/seller-registration" className="hover:underline flex items-center gap-1">
               <span className="hidden sm:inline">Seller Registration</span>
@@ -137,7 +137,7 @@ export default function Home() {
 
         {/* Main Navigation */}
         <motion.div
-          className="bg-white border-b border-gray-200 py-2 sm:py-4 px-4 sm:px-6 lg:px-24"
+          className="bg-white border-b border-gray-200 sm:py-4 px-4 sm:px-6 lg:px-24"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
@@ -310,7 +310,7 @@ export default function Home() {
         >
           <div className="max-w-7xl mx-auto">
             <motion.nav
-              className="flex items-center justify-center gap-8 xl:gap-12"
+              className="flex items-center justify-center gap-8 xl:gap-[80px]"
               variants={staggerContainer}
               initial="hidden"
               animate="visible"
@@ -344,7 +344,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <motion.section
-        className="bg-gray-50 py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-24"
+        className="bg-gray-50 px-4 sm:px-6 lg:px-24"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -410,7 +410,7 @@ export default function Home() {
       <AnimatedSection>
         <div className="container mx-auto">
           <motion.div
-            className="flex justify-between items-center mb-6 sm:mb-8"
+            className="flex justify-between items-center mb-6 sm:mb-[50px]"
             variants={fadeInUp}
             initial="hidden"
             whileInView="visible"
@@ -427,7 +427,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6"
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-[20px]"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -436,32 +436,32 @@ export default function Home() {
             {[
               {
                 name: "Echo (2nd Gen)",
-                price: "$120",
-                originalPrice: "$160",
+                price: "₹120",
+                originalPrice: "₹160",
                 img: Echo,
                 desc: "lorem abc",
                 rating: 4,
               },
               {
                 name: "Reebok",
-                price: "$120",
-                originalPrice: "$160",
+                price: "₹120",
+                originalPrice: "₹160",
                 img: shoes,
                 desc: "lorem abc",
                 rating: 4,
               },
               {
                 name: "Tonny Black",
-                price: "$120",
-                originalPrice: "$160",
+                price: "₹120",
+                originalPrice: "₹160",
                 img: purse,
                 desc: "lorem abc",
                 rating: 4,
               },
               {
                 name: "Sketchers",
-                price: "$120",
-                originalPrice: "$160",
+                price: "₹120",
+                originalPrice: "₹160",
                 img: shoe,
                 desc: "lorem abc",
                 rating: 4,
@@ -492,25 +492,27 @@ export default function Home() {
                         </div>
                         <Heart className="absolute top-[-20px] right-2 h-4 w-4 sm:h-5 sm:w-5 text-gray-400 hover:text-red-600 cursor-pointer" />
                       </div>
-                      <h3 className="font-semibold text-sm sm:text-base truncate">{product.name}</h3>
-                      <p className="text-xs sm:text-sm text-gray-500 mb-2 sm:mb-3">Lorem abc</p>
-                      <div className="flex items-center mb-2">
-                        {[...Array(5)].map((_, i) => (
-                          <motion.div
-                            key={i}
-                            initial={{ opacity: 0, scale: 0 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: index * 0.1 + i * 0.05 + 0.7 }}
-                          >
-                            <Star
-                              className={`h-3 w-3 sm:h-4 sm:w-4 ${i < 4 ? "text-yellow-400 fill-current" : "text-gray-300"}`}
-                            />
-                          </motion.div>
-                        ))}
+                      <div className="space-y-[8px]">
+                        <h3 className="font-semibold text-sm sm:text-base truncate">{product.name}</h3>
+                        <p className="text-xs sm:text-sm text-gray-500">Lorem abc</p>
+                        <div className="flex items-center">
+                          {[...Array(5)].map((_, i) => (
+                            <motion.div
+                              key={i}
+                              initial={{ opacity: 0, scale: 0 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              transition={{ delay: index * 0.1 + i * 0.05 + 0.7 }}
+                            >
+                              <Star
+                                className={`h-3 w-3 sm:h-4 sm:w-4 ${i < 4 ? "text-yellow-400 fill-current" : "text-gray-300"}`}
+                              />
+                            </motion.div>
+                          ))}
+                        </div>
                       </div>
                       <div className="flex items-center space-x-2">
                         <span className="text-sm sm:text-lg font-bold text-red-600">{product.price}</span>
-                        <span className="text-xs sm:text-sm text-gray-500 line-through">$160</span>
+                        <span className="text-xs sm:text-sm text-gray-500 line-through">₹160</span>
                       </div>
                     </CardContent>
                   </Card>
@@ -523,15 +525,15 @@ export default function Home() {
 
       {/* Trending Must-haves */}
       <div>
-        <section className="py-8 sm:py-12 lg:py-16 bg-gray-50 px-4 sm:px-6 lg:px-24">
+        <section className=" bg-gray-50 px-4 sm:px-6 lg:px-24">
           <div className="container mx-auto">
-            <div className="flex justify-between items-center mb-6 sm:mb-8">
+            <div className="flex justify-between items-center mb-6 sm:mb-[50px]">
               <h2 className="text-xl sm:text-2xl font-bold">Trending must-haves</h2>
               <a href="#" className="text-red-600 hover:underline text-sm sm:text-base">
                 View All
               </a>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-[20px]">
               {[
                 {
                   title: "Coat & Suit Outfit Men",
@@ -558,14 +560,14 @@ export default function Home() {
                     />
                     <div className="relative inset-0 bg-black bg-opacity-40 rounded-b-lg flex items-end p-4 sm:p-6">
                       <div className="text-white w-full">
-                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-4">
+                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-[15px]">
                           <div>
-                            <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">{item.title}</h3>
+                            <h3 className="text-lg sm:text-lg font-semibold mb-1 sm:mb-2">{item.title}</h3>
                             <p className="text-sm opacity-90">{item.subtitle}</p>
                           </div>
                           <Button
                             variant="outline"
-                            className="bg-white text-black border-white hover:bg-gray-100 text-sm sm:text-base"
+                            className="bg-transparent text-white border-white hover:bg-gray-100 text-sm sm:text-base p-6 "
                           >
                             ₹4999 Shop Now
                           </Button>
@@ -610,7 +612,7 @@ export default function Home() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button className="bg-red-600 hover:bg-red-700 px-6 sm:px-8 py-2 sm:py-3">Buy Now!</Button>
+                <Button className="bg-red-600 hover:bg-red-700 px-6 sm:px-10 py-2 sm:py-6">Buy Now!</Button>
               </motion.div>
             </motion.div>
             <motion.div
@@ -665,7 +667,7 @@ export default function Home() {
         <AnimatedSection key={sectionIndex}>
           <div className="container mx-auto">
             <motion.div
-              className="flex justify-between items-center mb-6 sm:mb-8"
+              className="flex justify-between items-center mb-6 sm:mb-[50px]"
               variants={fadeInUp}
               initial="hidden"
               whileInView="visible"
@@ -682,7 +684,7 @@ export default function Home() {
             </motion.div>
 
             <motion.div
-              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6"
+              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-[20px]"
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
@@ -703,22 +705,24 @@ export default function Home() {
                             transition={{ duration: 0.3 }}
                           />
                         </div>
-                        <h3 className="font-semibold text-sm sm:text-base truncate">{product.name}</h3>
-                        <p className="text-xs sm:text-sm text-gray-500 mb-2 sm:mb-3">Lorem abc</p>
-                        <div className="flex items-center mb-2">
-                          {[...Array(5)].map((_, i) => (
-                            <motion.div
-                              key={i}
-                              initial={{ opacity: 0, scale: 0 }}
-                              whileInView={{ opacity: 1, scale: 1 }}
-                              viewport={{ once: true }}
-                              transition={{ delay: index * 0.1 + i * 0.05 + 0.3 }}
-                            >
-                              <Star
-                                className={`h-3 w-3 sm:h-4 sm:w-4 ${i < 4 ? "text-yellow-400 fill-current" : "text-gray-300"}`}
-                              />
-                            </motion.div>
-                          ))}
+                        <div className="space-y-[8px] mt-2">
+                          <h3 className="font-semibold text-sm sm:text-base truncate">{product.name}</h3>
+                          <p className="text-xs sm:text-sm text-gray-500">Lorem abc</p>
+                          <div className="flex items-center">
+                            {[...Array(5)].map((_, i) => (
+                              <motion.div
+                                key={i}
+                                initial={{ opacity: 0, scale: 0 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 + i * 0.05 + 0.3 }}
+                              >
+                                <Star
+                                  className={`h-3 w-3 sm:h-4 sm:w-4 ${i < 4 ? "text-yellow-400 fill-current" : "text-gray-300"}`}
+                                />
+                              </motion.div>
+                            ))}
+                          </div>
                         </div>
                         <div className="flex items-center space-x-2">
                           <span className="text-sm sm:text-lg font-bold text-red-600">{product.price}</span>
@@ -735,10 +739,10 @@ export default function Home() {
       ))}
 
       {/* New Arrival Section */}
-      <AnimatedSection className="bg-gray-50">
+      <AnimatedSection className="bg-gray-50 mb-[200px]">
         <div className="container mx-auto">
           <motion.h2
-            className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8"
+            className="text-xl sm:text-2xl font-bold mb-6 sm:mb-[50px]"
             variants={fadeInUp}
             initial="hidden"
             whileInView="visible"
@@ -748,21 +752,21 @@ export default function Home() {
           </motion.h2>
 
           <motion.div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:h-[600px]"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
             <motion.div
-              className="bg-black text-white rounded-lg p-4 sm:p-6 lg:p-8 relative overflow-hidden"
+              className="bg-[#0d0d0d] text-white rounded-[4px] p-4 sm:p-6 lg:p-8 relative overflow-hidden"
               variants={staggerItem}
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="relative z-10">
+              <div className="absolute z-10 flex flex-col bottom-10 space-y-[16px]">
                 <motion.h3
-                  className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4"
+                  className="text-2xl sm:text-3xl font-bold"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -771,7 +775,7 @@ export default function Home() {
                   PlayStation 5
                 </motion.h3>
                 <motion.p
-                  className="mb-4 sm:mb-6 text-sm sm:text-base"
+                  className="text-sm sm:text-base"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -798,7 +802,7 @@ export default function Home() {
               <motion.img
                 src={ps}
                 alt="PlayStation 5"
-                className="absolute right-0 bottom-0 opacity-80 w-32 sm:w-48 lg:w-64 h-auto"
+                className="absolute right-0 bottom-0 opacity-80 w-32 sm:w-48 lg:w-auto h-[500px]"
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 0.8, x: 0 }}
                 viewport={{ once: true }}
@@ -809,13 +813,13 @@ export default function Home() {
 
             <motion.div className="flex flex-col gap-4 sm:gap-6" variants={staggerItem}>
               <motion.div
-                className="bg-black text-white rounded-lg p-4 sm:p-6 lg:p-8 relative overflow-hidden"
+                className="bg-[#0d0d0d] text-white rounded-[4px] p-4 sm:p-6 lg:p-8 relative overflow-hidden lg:h-[400px] "
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="relative z-10">
+                <div className="z-30 flex flex-col bottom-10 space-y-[16px] absolute">
                   <motion.h3
-                    className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4"
+                    className="text-2xl sm:text-3xl font-bold z-30"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -824,7 +828,7 @@ export default function Home() {
                     Women's Collections
                   </motion.h3>
                   <motion.p
-                    className="mb-4 sm:mb-6 text-sm sm:text-base"
+                    className="text-sm sm:text-base z-30"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -842,7 +846,7 @@ export default function Home() {
                   >
                     <Button
                       variant="outline"
-                      className="text-white border-white bg-transparent hover:bg-white hover:text-black"
+                      className="text-white z-30 border-white bg-transparent hover:bg-white hover:text-black "
                     >
                       Shop Now
                     </Button>
@@ -851,7 +855,7 @@ export default function Home() {
                 <motion.img
                   src={women}
                   alt="Women's Collections"
-                  className="absolute right-0 bottom-0 opacity-80 w-32 sm:w-48 h-auto"
+                  className="absolute right-0 bottom-0 opacity-80 w-32 sm:w-auto h-[400px]"
                   initial={{ opacity: 0, x: 50 }}
                   whileInView={{ opacity: 0.8, x: 0 }}
                   viewport={{ once: true }}
@@ -861,21 +865,21 @@ export default function Home() {
               </motion.div>
 
               <motion.div
-                className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5"
+                className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 h-[220px]"
                 variants={staggerContainer}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
               >
                 <motion.div
-                  className="bg-black text-white rounded-lg p-4 sm:p-6 lg:p-8 relative overflow-hidden"
+                  className="bg-[#0d0d0d] text-white rounded-[4px] p-4 sm:p-6 lg:p-8 relative overflow-hidden"
                   variants={staggerItem}
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="relative z-10">
+                  <div className="absolute bottom-6 z-10 flex flex-col space-y-[10px]">
                     <motion.h3
-                      className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2 sm:mb-4"
+                      className="text-xl sm:text-2xl lg:text-3xl font-bold"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
@@ -884,7 +888,7 @@ export default function Home() {
                       Speakers
                     </motion.h3>
                     <motion.p
-                      className="mb-3 sm:mb-6 text-xs sm:text-sm lg:text-base"
+                      className="text-xs sm:text-sm lg:text-base"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
@@ -909,9 +913,9 @@ export default function Home() {
                     </motion.div>
                   </div>
                   <motion.img
-                    src={speaker}
+                    src={Echo}
                     alt="Speakers"
-                    className="absolute right-0 bottom-0 opacity-80 w-16 sm:w-24 lg:w-32 h-auto object-cover"
+                    className="absolute right-0 bottom-0 opacity-80 w-16 sm:w-24 lg:w-44 mr-4 h-auto object-cover"
                     initial={{ opacity: 0, scale: 0.5 }}
                     whileInView={{ opacity: 0.8, scale: 1 }}
                     viewport={{ once: true }}
@@ -921,14 +925,14 @@ export default function Home() {
                 </motion.div>
 
                 <motion.div
-                  className="bg-black text-white rounded-lg p-4 sm:p-6 lg:p-8 relative overflow-hidden"
+                  className="bg-[#0d0d0d] text-white rounded-[4px] p-4 sm:p-6 lg:p-8 relative overflow-hidden"
                   variants={staggerItem}
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="relative z-10">
+                  <div className="absolute bottom-6 z-10 space-y-[10px]">
                     <motion.h3
-                      className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2 sm:mb-4"
+                      className="text-xl sm:text-2xl lg:text-3xl font-bold"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
@@ -937,7 +941,7 @@ export default function Home() {
                       Perfume
                     </motion.h3>
                     <motion.p
-                      className="mb-3 sm:mb-6 text-xs sm:text-sm lg:text-base"
+                      className="text-xs sm:text-sm lg:text-base"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
@@ -964,7 +968,7 @@ export default function Home() {
                   <motion.img
                     src={perfume}
                     alt="Perfume"
-                    className="absolute right-0 bottom-0 opacity-80 w-16 sm:w-24 lg:w-32 h-auto"
+                    className="absolute right-0 bottom-0 opacity-80 w-16 sm:w-24 lg:w-44 mr-4 h-auto"
                     initial={{ opacity: 0, scale: 0.5 }}
                     whileInView={{ opacity: 0.8, scale: 1 }}
                     viewport={{ once: true }}
@@ -988,7 +992,7 @@ export default function Home() {
       >
         <div className="container mx-auto">
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 sm:gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-8 gap-6 sm:gap-8"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -1032,6 +1036,7 @@ export default function Home() {
             </motion.div>
 
             {/* Footer Links */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6"></div>
             {[
               {
                 title: "About",
@@ -1044,6 +1049,10 @@ export default function Home() {
               {
                 title: "Policies",
                 links: ["Privacy", "Security", "Terms & Conditions", "Seller", "Return & Refund", "Shipping"],
+              },
+              {
+                title: "Quick Links",
+                links: ["Privacy Policy", "Terms of use", "FAQ", "Seller", "Contact"],
               },
             ].map((section, index) => (
               <motion.div key={index} className="space-y-4" variants={staggerItem}>
@@ -1068,7 +1077,7 @@ export default function Home() {
             {/* Download App Section */}
             <motion.div className="space-y-4" variants={staggerItem}>
               <h3 className="text-lg font-medium">Download App</h3>
-              <p className="text-sm text-gray-300">Save $3 with App New User Only</p>
+              <p className="text-sm text-gray-300">Save ₹3 with App New User Only</p>
               <motion.div whileHover={{ scale: 1.1, rotate: 5 }} transition={{ duration: 0.3 }}>
                 <QrCode className="w-20 h-20 sm:w-24 sm:h-24" />
               </motion.div>
