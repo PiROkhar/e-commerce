@@ -1,6 +1,7 @@
 "use client"
 import Logo from "/logo.png"
 import Img1 from "/excited-well-dressed-young-woman-posing-light-wall-attractive-brunette-girl-pink-fur-coat-playing-with-her-hair-laughing 1.png"
+import loc from "/vector-2.png"
 import group from "/Group.png"
 import Echo from "/echo.png"
 import shoes from "/shoes.png"
@@ -121,8 +122,8 @@ export default function Home() {
       >
         {/* Top Banner */}
         <div className="bg-red-700 text-white  px-4">
-          <div className="max-w-7xl mx-auto flex justify-end items-center gap-2 sm:gap-6 text-xs sm:text-sm">
-            <a href="/seller-registration" className="hover:underline flex items-center gap-1">
+          <div className="max-w-7xl mx-auto flex justify-end items-center gap-2 sm:gap-6 text-xs sm:text-sm py-2">
+            <a href="/seller-registration" className="hover:underline flex items-center gap-2">
               <span className="hidden sm:inline">Seller Registration</span>
               <span className="sm:hidden">Seller</span>
             </a>
@@ -208,7 +209,7 @@ export default function Home() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4, duration: 0.5 }}
               >
-                <MapPin className="h-4 w-4 sm:h-6 sm:w-6" />
+               <img src={loc} className="h-8"/>
                 <div className="flex flex-col">
                   <span className="text-xs">Delivered To</span>
                   <span className="font-medium text-black">Pune 412206</span>
